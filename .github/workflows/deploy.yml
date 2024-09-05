@@ -43,7 +43,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Install dependencies
-        run: pnpm install # or pnpm install / yarn install / bun install
+        run: pnpm install --registry https://registry.npmmirror.com # or pnpm install / yarn install / bun install
       - name: Build with VitePress
         run: pnpm run docs:build
       - name: Upload artifact
