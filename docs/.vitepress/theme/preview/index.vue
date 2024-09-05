@@ -7,7 +7,8 @@
       <div class="code" :class="{ show_code: showCode }">
         <div class="code__reference">
           <div class="code_content">
-            <highlightjs autodetect :code="sourceCode" />
+            {{ sourceCode }}
+            <!-- <hljsVuePlugin.default.component autodetect :code="sourceCode" /> -->
           </div>
         </div>
       </div>
@@ -18,7 +19,8 @@
 
 <script setup>
 import { onMounted, reactive, toRefs } from "vue";
-import "highlight.js";
+// import 'highlight.js';
+// import * as hljsVuePlugin from "@highlightjs/vue-plugin";
 
 const props = defineProps({
   compName: {
