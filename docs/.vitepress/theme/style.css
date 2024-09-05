@@ -137,3 +137,12 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
+.t-button {
+  display: inline-block;
+  border: 1px solid #ddd;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #409eff;
+  color: #fff;
+}
