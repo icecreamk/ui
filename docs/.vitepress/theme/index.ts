@@ -1,14 +1,20 @@
 import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import TestUI from "components";
-import './style.css'
+import AsforUI from "components";
+import ElementPlus from 'element-plus'
+
+
 import {
   AntDesignContainer,
   ElementPlusContainer,
   NaiveUIContainer
 } from '@vitepress-demo-preview/component'
+
 import '@vitepress-demo-preview/component/dist/style.css'
+import 'element-plus/dist/index.css'
+import 'element-plus/theme-chalk/dark/css-vars.css'
+import './style.css'
 
 
 
@@ -20,7 +26,8 @@ export default {
     })
   },
   enhanceApp({ app, router, siteData }) {
-    app.use(TestUI);
+    app.use(AsforUI);
+    app.use(ElementPlus);
     app.component('demo-preview', NaiveUIContainer)
   }
 } satisfies Theme

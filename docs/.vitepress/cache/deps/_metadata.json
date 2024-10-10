@@ -2,36 +2,57 @@
   "hash": "2ebb8e81",
   "configHash": "941c1311",
   "lockfileHash": "2609ec6e",
-  "browserHash": "74da73eb",
+  "browserHash": "9609eb56",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/.pnpm/vue@3.5.0/node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "82087acd",
+      "fileHash": "591d577b",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/.pnpm/@vue+devtools-api@7.4.4/node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "6bd67593",
+      "fileHash": "139f8060",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../../node_modules/.pnpm/@vueuse+core@11.0.3_vue@3.5.0/node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "71f0ff46",
+      "fileHash": "1108f952",
       "needsInterop": false
     },
     "@vitepress-demo-preview/component": {
       "src": "../../../../node_modules/.pnpm/@vitepress-demo-preview+component@2.3.2_vitepress@1.3.4_@algolia+client-search@4.24.0_postcss_mqdagsekghhabcfany7pgvfv4i/node_modules/@vitepress-demo-preview/component/dist/preview-component.js",
       "file": "@vitepress-demo-preview_component.js",
-      "fileHash": "48253339",
+      "fileHash": "8c364943",
+      "needsInterop": false
+    },
+    "element-plus": {
+      "src": "../../../../node_modules/.store/element-plus@2.8.4/node_modules/element-plus/es/index.mjs",
+      "file": "element-plus.js",
+      "fileHash": "c6237525",
+      "needsInterop": false
+    },
+    "lodash-es": {
+      "src": "../../../../node_modules/.store/lodash-es@4.17.21/node_modules/lodash-es/lodash.js",
+      "file": "lodash-es.js",
+      "fileHash": "823fdf75",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-ROITLQX2": {
-      "file": "chunk-ROITLQX2.js"
+    "chunk-6QKTWIAS": {
+      "file": "chunk-6QKTWIAS.js"
+    },
+    "chunk-R4W6YPBI": {
+      "file": "chunk-R4W6YPBI.js"
+    },
+    "chunk-KI6ENSV5": {
+      "file": "chunk-KI6ENSV5.js"
+    },
+    "chunk-5WRI5ZAA": {
+      "file": "chunk-5WRI5ZAA.js"
     }
   }
 }

@@ -1,9 +1,10 @@
 <template>
-  <t-button>aaa</t-button>
-  <t-button>bbb</t-button>
+  <as-button>aaa</as-button>
+  <as-button>bbb</as-button>
 </template>
 <style>
-.t-button {
+.as-button {
   margin-right: 10px;
 }
+
 </style>

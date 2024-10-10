@@ -17,8 +17,10 @@
     "@vitepress-demo-preview/component": "^2.3.2",
     "@vitepress-demo-preview/plugin": "^1.2.3",
     "components": "workspace:^",
+    "element-plus": "^2.8.4",
     "examples": "workspace:^",
-    "highlight.js": "^11.10.0"
+    "highlight.js": "^11.10.0",
+    "lodash-es": "^4.17.21"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.3",

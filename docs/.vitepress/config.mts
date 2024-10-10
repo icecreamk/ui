@@ -28,7 +28,10 @@ export default defineConfig({
       "/components/": [
         {
           text: "基本",
-          items: [{ text: "Button 按钮", link: "/components/button/" }],
+          items: [
+            { text: "Button 按钮", link: "/components/button/" },
+            { text: "Table 表格", link: "/components/table/" },
+          ],
         },
       ],
     },

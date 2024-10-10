@@ -1,4 +1,10 @@
 import {
+  del,
+  isVue2,
+  isVue3,
+  set
+} from "./chunk-R4W6YPBI.js";
+import {
   Fragment,
   TransitionGroup,
   computed,
@@ -34,27 +40,8 @@ import {
   version,
   watch,
   watchEffect
-} from "./chunk-ROITLQX2.js";
-
-// node_modules/.pnpm/vitepress@1.3.4_@algolia+client-search@4.24.0_postcss@8.4.44_search-insights@2.17.1/node_modules/vitepress/lib/vue-demi.mjs
-var isVue2 = false;
-var isVue3 = true;
-function set(target, key, val) {
-  if (Array.isArray(target)) {
-    target.length = Math.max(target.length, key);
-    target.splice(key, 1, val);
-    return val;
-  }
-  target[key] = val;
-  return val;
-}
-function del(target, key) {
-  if (Array.isArray(target)) {
-    target.splice(key, 1);
-    return;
-  }
-  delete target[key];
-}
+} from "./chunk-KI6ENSV5.js";
+import "./chunk-5WRI5ZAA.js";
 
 // node_modules/.pnpm/@vueuse+shared@11.0.3_vue@3.5.0/node_modules/@vueuse/shared/index.mjs
 function computedEager(fn, options) {
@@ -9265,13 +9252,4 @@ export {
   watchWithFilter,
   whenever
 };
-/*! Bundled license information:
-
-vitepress/lib/vue-demi.mjs:
-  (**
-   * vue-demi v0.14.7
-   * Copyright (c) 2020-present, Anthony Fu
-   * @license MIT
-   *)
-*/
 //# sourceMappingURL=vitepress___@vueuse_core.js.map
