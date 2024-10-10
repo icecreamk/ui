@@ -1,13 +1,14 @@
-// https://vitepress.dev/guide/custom-theme
 import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import TestUI from "components";
-// import * as hljsVuePlugin from "@highlightjs/vue-plugin";
-import Preview from "./preview/index.vue";
 import './style.css'
-// import "highlight.js/styles/base16/summerfruit-light.css"; // 主题
-// import { vuePlugin } from "@highlightjs/vue-plugin";
+import {
+  AntDesignContainer,
+  ElementPlusContainer,
+  NaiveUIContainer
+} from '@vitepress-demo-preview/component'
+import '@vitepress-demo-preview/component/dist/style.css'
 
 
 
@@ -20,7 +21,6 @@ export default {
   },
   enhanceApp({ app, router, siteData }) {
     app.use(TestUI);
-    app.component('Preview', Preview)
-    // app.use(hljsVuePlugin)
+    app.component('demo-preview', NaiveUIContainer)
   }
 } satisfies Theme

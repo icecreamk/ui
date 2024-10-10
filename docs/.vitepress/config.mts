@@ -1,4 +1,8 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig } from "vitepress";
+import {
+  containerPreview,
+  componentPreview,
+} from "@vitepress-demo-preview/plugin";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -7,8 +11,8 @@ export default defineConfig({
   description: "Asfor a UI Library",
   themeConfig: {
     nav: [
-      { text: '首页', link: '/' },
-      { text: '组件', link: '/components/button' }
+      { text: "首页", link: "/" },
+      { text: "组件", link: "/components/button" },
     ],
 
     // sidebar: [
@@ -30,7 +34,15 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ]
-  }
-})
+      { icon: "github", link: "https://github.com/vuejs/vitepress" },
+    ],
+  },
+  markdown: {
+    // @vitepress-demo-preview的配置
+    config(md) {
+      // 支持区块内的方式展示 demo 和示例代码
+      md.use(containerPreview);
+      md.use(componentPreview);
+    },
+  },
+});
