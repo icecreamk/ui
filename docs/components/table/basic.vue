@@ -31,11 +31,11 @@ export default defineComponent({
 
     const columns = [
       {
-        prop: "a",
+        prop: "time",
         label: "时间",
       },
       {
-        prop: "b",
+        prop: "province",
         label: "省份",
       },
     ];
@@ -52,7 +52,6 @@ export default defineComponent({
       resetPage = false,
     } = {}) => {
       const { refreshTable } = baseTableRef.value || {};
-      console.log('1', refreshTable)
       refreshTable && refreshTable({ extraParams, resetPage });
     };
 
@@ -67,6 +66,5 @@ export default defineComponent({
 </script>
 
 <style>
-.as-table {
-}
+
 </style>

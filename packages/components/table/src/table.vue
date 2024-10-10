@@ -119,7 +119,7 @@ const refreshTable = async ({ extraParams = {}, resetPage = false } = {}) => {
       ...extraParams,
     };
 
-    tableList.value = [{ a: 'test' }, { a: 'test' }, { a: 'test' }];
+    tableList.value = [{ province: '省份1', time: '时间' }, { province: '省份2', time: '时间' }, { province: '省份3', time: '时间' }];
 
     console.log('tableList', tableList)
 
