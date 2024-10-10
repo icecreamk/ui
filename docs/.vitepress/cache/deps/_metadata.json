@@ -1,37 +1,37 @@
 {
-  "hash": "d184d9e8",
-  "configHash": "405cefe6",
-  "lockfileHash": "ac698dba",
-  "browserHash": "be444fd9",
+  "hash": "2ebb8e81",
+  "configHash": "941c1311",
+  "lockfileHash": "2609ec6e",
+  "browserHash": "74da73eb",
   "optimized": {
     "vue": {
-      "src": "../../../../node_modules/.pnpm/vue@3.5.1/node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "src": "../../../../node_modules/.pnpm/vue@3.5.0/node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "ee28b17b",
+      "fileHash": "82087acd",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/.pnpm/@vue+devtools-api@7.4.4/node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "b28e87bf",
+      "fileHash": "6bd67593",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
-      "src": "../../../../node_modules/.pnpm/@vueuse+core@11.0.3_vue@3.5.1/node_modules/@vueuse/core/index.mjs",
+      "src": "../../../../node_modules/.pnpm/@vueuse+core@11.0.3_vue@3.5.0/node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "3891e2c6",
+      "fileHash": "71f0ff46",
       "needsInterop": false
     },
     "@vitepress-demo-preview/component": {
-      "src": "../../../../node_modules/.store/@vitepress-demo-preview+component@2.3.2/node_modules/@vitepress-demo-preview/component/dist/preview-component.js",
+      "src": "../../../../node_modules/.pnpm/@vitepress-demo-preview+component@2.3.2_vitepress@1.3.4_@algolia+client-search@4.24.0_postcss_mqdagsekghhabcfany7pgvfv4i/node_modules/@vitepress-demo-preview/component/dist/preview-component.js",
       "file": "@vitepress-demo-preview_component.js",
-      "fileHash": "42ecf7c3",
+      "fileHash": "48253339",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-4Q2F7FTO": {
-      "file": "chunk-4Q2F7FTO.js"
+    "chunk-ROITLQX2": {
+      "file": "chunk-ROITLQX2.js"
     }
   }
 }
