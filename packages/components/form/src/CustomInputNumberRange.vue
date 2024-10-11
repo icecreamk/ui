@@ -9,7 +9,7 @@
 
 <script lang="ts" setup>
 import { defineComponent } from "vue";
-import { get, set } from "lodash";
+import { get, set } from "lodash-es";
 
 defineComponent({
   name: "CustomInputNumberRange",
