@@ -8,19 +8,18 @@
     "test": "pnpm -C examples dev",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "mock": "pnpm run --filter ./packages/servicer dev"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "components": "workspace:^",
+    "examples": "workspace:^",
     "@vitepress-demo-preview/component": "^2.3.2",
     "@vitepress-demo-preview/plugin": "^1.2.3",
-    "components": "workspace:^",
-    "element-plus": "^2.8.4",
-    "examples": "workspace:^",
-    "highlight.js": "^11.10.0",
-    "lodash-es": "^4.17.21"
+    "element-plus": "^2.8.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.3",
