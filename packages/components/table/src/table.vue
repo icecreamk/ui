@@ -28,9 +28,8 @@
 <script lang="tsx" setup>
 import { ref, defineComponent } from 'vue'
 import TableColumn from "./TableColumn";
-// import http from "@/utils/request";
-// import { resetPageNoFormDelete } from "./utils";
-// import { getResRealData } from "@/utils/base";
+import http from "axios";
+import { getResRealData, resetPageNoFormDelete } from "./utils";
 
 defineOptions({
   name: "BaseTable",
@@ -107,8 +106,7 @@ const refreshTable = async ({ extraParams = {}, resetPage = false } = {}) => {
     loading.value = true;
     const curParams: any =
       (props.getTableParams && props.getTableParams()) || {};
-    // const newPageNo = resetPageNoFormDelete(pageInfo.value);
-    const newPageNo = 1
+    const newPageNo = resetPageNoFormDelete(pageInfo.value);
     pageInfo.value.pageNo = newPageNo;
 
     const { pageNo, pageSize } = pageInfo.value;
@@ -119,24 +117,26 @@ const refreshTable = async ({ extraParams = {}, resetPage = false } = {}) => {
       ...extraParams,
     };
 
-    tableList.value = [{ province: '省份1', time: '时间' }, { province: '省份2', time: '时间' }, { province: '省份3', time: '时间' }];
 
-    console.log('tableList', tableList)
+    try {
+      const res = await http({
+        method: props.api.method || "get",
+        url: props.api.url,
+        params,
+        ...props.api.config || {}
+      })
+      
+      const { data, total = 0 } = getResRealData(res);
+      pageInfo.value.totalNum = Number(total);
+      tableList.value = data;
+      props.updateTableId && (tableUid.value = Math.random());
+      loading.value = false;
+    } catch (error) {
+      loading.value = false;
+      console.log(error)
+    }
 
-    // const res = await http[props.api.method](
-    //   props.api.url,
-    //   params,
-    //   props.api.config || {}
-    // );
 
-    // const { data, total = 0 } = getResRealData(res);
-
-    // pageInfo.value.totalNum = Number(total);
-
-    // tableList.value = data;
-
-    // props.updateTableId && (tableUid.value = Math.random());
-    loading.value = false;
   } catch (error) {
     console.error(error);
     loading.value = false;

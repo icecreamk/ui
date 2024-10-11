@@ -5,10 +5,11 @@
     :tableAttrs="tableAttrs"
     :getTableParams="getTableParams"
     :api="{
-      url: '/csisp-report/report/pgList',
-      method: 'post',
+      url: 'table',
+      method: 'get',
       config: {
-        // baseURL: '',
+        baseURL: 'http://localhost:7002/',
+        withCredentials: false,
       },
     }"
     @onSelectionChange="handleSelectionChange"
@@ -55,11 +56,14 @@ export default defineComponent({
       refreshTable && refreshTable({ extraParams, resetPage });
     };
 
+    const handleSelectionChange = () => {}
+
     return {
       columns,
       tableAttrs,
       baseTableRef,
       getTableParams,
+      handleSelectionChange,
     };
   },
 });
