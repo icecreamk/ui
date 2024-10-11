@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "mock": "pnpm run --filter ./packages/egg-service dev",
     "dev": "vite examples",
     "test": "pnpm -C examples dev",
-    "docs:dev": "vitepress dev docs",
+    "docs:dev": "npm run mock & vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs",
-    "mock": "pnpm run --filter ./packages/servicer dev"
+    "docs:preview": "vitepress preview docs"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +19,7 @@
     "examples": "workspace:^",
     "@vitepress-demo-preview/component": "^2.3.2",
     "@vitepress-demo-preview/plugin": "^1.2.3",
+    "axios": "^1.7.7",
     "element-plus": "^2.8.4"
   },
   "devDependencies": {
