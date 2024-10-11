@@ -19,9 +19,9 @@ import {
   watch,
   withCtx
 } from "./chunk-KI6ENSV5.js";
-import "./chunk-5WRI5ZAA.js";
+import "./chunk-G3PMV62Z.js";
 
-// node_modules/.pnpm/@vitepress-demo-preview+component@2.3.2_vitepress@1.3.4_@algolia+client-search@4.24.0_postcss_mqdagsekghhabcfany7pgvfv4i/node_modules/@vitepress-demo-preview/component/dist/preview-component.js
+// node_modules/.pnpm/@vitepress-demo-preview+component@2.3.2_vitepress@1.3.4_@algolia+client-search@4.24.0_async-v_yq2zochfk6n3j6mhf5vweih7je/node_modules/@vitepress-demo-preview/component/dist/preview-component.js
 var Z = (t, n) => {
   const e = t.__vccOpts || t;
   for (const [c, l] of n)
