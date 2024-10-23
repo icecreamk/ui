@@ -9,7 +9,7 @@
       @selection-change="handleSelectionChange"
     >
       <slot name="expand"></slot>
-      <el-table-column v-for="item in columns" v-bind="item" :key="item.prop" />
+      <TableColumn :columns="columns" />
       <slot name="operation"></slot>
     </el-table>
     <el-pagination
@@ -27,8 +27,8 @@
 </template>
 <script lang="tsx" setup>
 import { ref, defineComponent } from 'vue'
-import TableColumn from "./TableColumn";
 import http from "axios";
+import TableColumn from './tableColumn.vue';
 import { getResRealData, resetPageNoFormDelete } from "./utils";
 
 defineOptions({
@@ -121,7 +121,7 @@ const refreshTable = async ({ extraParams = {}, resetPage = false } = {}) => {
     try {
       const res = await http({
         method: props.api.method || "get",
-        url: props.api.url,
+        url: props.api.url || '/',
         params,
         ...props.api.config || {}
       })

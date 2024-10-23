@@ -3,6 +3,12 @@
     :columns="columns"
     ref="baseTableRef"
     :api="api"
+    :tableAttrs="{
+      headerCellStyle: () => {
+        return { background: 'rgb(119, 122, 126)' };
+      },
+      height: '180px'
+    }"
   />
 </template>
 
@@ -11,7 +17,6 @@ import { defineComponent, ref, onMounted, nextTick } from "vue";
 
 export default defineComponent({
   setup() {
-
     onMounted(() => {
       triggerRefresh();
     });
@@ -46,7 +51,6 @@ export default defineComponent({
       refreshTable && refreshTable({ extraParams, resetPage });
     };
 
-
     return {
       columns,
       api,
@@ -57,5 +61,4 @@ export default defineComponent({
 </script>
 
 <style>
-
 </style>
