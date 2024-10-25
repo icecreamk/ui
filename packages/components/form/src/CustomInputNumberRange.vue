@@ -7,7 +7,7 @@
   <span style="padding: 0 5px">ms</span>
 </template>
 
-<script lang="ts" setup>
+<script setup>
 import { defineComponent } from "vue";
 import { get, set } from "lodash-es";
 
@@ -36,7 +36,7 @@ const getCompAttrs = (info) => {
   return (props.getCompAttrs && props.getCompAttrs(info)) || {};
 };
 
-const proxys: any = new Proxy(props.myForm, {
+const proxys = new Proxy(props.myForm, {
   get: function (target, property) {
     return get(target, property);
   },

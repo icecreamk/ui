@@ -9,7 +9,7 @@
   </el-table-column>
 </template>
 
-<script lang="tsx" setup>
+<script setup>
 import { omit } from "lodash-es";
 
 defineOptions({
@@ -18,7 +18,7 @@ defineOptions({
 
 defineProps({
   columns: {
-    type: Array<any>,
+    type: Array,
     default: () => [],
   }
 });

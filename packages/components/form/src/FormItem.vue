@@ -54,7 +54,7 @@
     </component>
   </el-form-item>
 </template>
-<script lang="ts" setup>
+<script setup>
 import { omit, get, set, isArray } from "lodash-es";
 import { getColAttrs } from "./utils";
 // import ColumSlot from "../BaseTable/ColumSlot";
@@ -92,7 +92,7 @@ const props = defineProps({
 });
 
 // 代理form，用于在v-model上使用prop表示路径
-const proxys: any = new Proxy(props.myForm, {
+const proxys = new Proxy(props.myForm, {
   get: function (target, property) {
     return get(target, property);
   },
@@ -129,7 +129,7 @@ const getItemListEvents = ({ uid, idx }, events = {}) => {
   return newEvents;
 };
 
-const getCompAttrs = (value: any, { uid = "-1", idx = 0 } = {}) => {
+const getCompAttrs = (value, { uid = "-1", idx = 0 } = {}) => {
   return {
     ...omit(value.inner, [
       "is",
@@ -144,14 +144,14 @@ const getCompAttrs = (value: any, { uid = "-1", idx = 0 } = {}) => {
   };
 };
 
-const getCompType = (value: any) => {
+const getCompType = (value) => {
   return value.inner.is;
 };
-const getChildCompType = (value: any) => {
+const getChildCompType = (value) => {
   return value.inner.childIs;
 };
 
-const getFormItemAttrs = (value: any) => {
+const getFormItemAttrs = (value) => {
   return {
     label: value.label,
     prop: value.prop,

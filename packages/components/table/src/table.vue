@@ -25,7 +25,7 @@
     />
   </div>
 </template>
-<script lang="tsx" setup>
+<script setup>
 import { ref, defineComponent } from 'vue'
 import http from "axios";
 import TableColumn from './tableColumn.vue';
@@ -41,7 +41,7 @@ defineComponent({
 
 const props = defineProps({
   columns: {
-    type: Array<any>,
+    type: Array,
     default: () => [],
   },
   showPagination: {
@@ -49,7 +49,7 @@ const props = defineProps({
     default: true,
   },
   initData: {
-    type: Array<any>,
+    type: Array,
     default: () => [],
   },
   tableAttrs: {
@@ -104,13 +104,13 @@ const refreshTable = async ({ extraParams = {}, resetPage = false } = {}) => {
 
   try {
     loading.value = true;
-    const curParams: any =
+    const curParams =
       (props.getTableParams && props.getTableParams()) || {};
     const newPageNo = resetPageNoFormDelete(pageInfo.value);
     pageInfo.value.pageNo = newPageNo;
 
     const { pageNo, pageSize } = pageInfo.value;
-    const params: any = {
+    const params = {
       ...curParams,
       pageNo,
       pageSize,
@@ -143,7 +143,7 @@ const refreshTable = async ({ extraParams = {}, resetPage = false } = {}) => {
   }
 };
 
-const handlePageSizeChange = (val: any) => {
+const handlePageSizeChange = (val) => {
   pageInfo.value.pageSize = val;
   refreshTable({
     extraParams: {
@@ -151,7 +151,7 @@ const handlePageSizeChange = (val: any) => {
     },
   });
 };
-const handlePageNoChange = (val: any) => {
+const handlePageNoChange = (val) => {
   pageInfo.value.pageNo = val;
   refreshTable({
     extraParams: {

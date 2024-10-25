@@ -29,7 +29,7 @@
     </el-form>
   </div>
 </template>
-<script lang="tsx" setup>
+<script  setup>
 import { ref, useAttrs, watch } from "vue";
 import { toPairs, omit, cloneDeep } from "lodash-es";
 import FormItem from "./FormItem.vue";
@@ -39,19 +39,26 @@ defineOptions({
   name: "as-form",
 });
 
-const myProp = defineProps<{
-  form: any;
-  itemList: any;
-  rules?: any;
-  formAttrs?: any;
-}>();
-const formItemRef: any = {};
+const myProp = defineProps({
+  form: Object,
+  itemList: Array,
+  rules: Object,
+  formAttrs: Object,
+})
+
+// const myProp = defineProps<{
+//   form: any;
+//   itemList: any;
+//   rules?: any;
+//   formAttrs?: any;
+// }>();
+const formItemRef = {};
 const newItemList = ref({});
 const allRowInfos = ref({});
 const slots = defineSlots();
 const myAttrs = useAttrs();
 const baseFormRef = ref();
-const getColItem: any = (item) => {
+const getColItem = (item) => {
   return toPairs(item.value);
 };
 
@@ -90,7 +97,7 @@ watch(
   }
 );
 
-const getRowAttrs = (rowIdx: number) => {
+const getRowAttrs = (rowIdx) => {
   return allRowInfos.value[rowIdx];
 };
 
