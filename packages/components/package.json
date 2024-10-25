@@ -1,7 +1,13 @@
 {
-  "name": "components",
-  "version": "1.0.2",
-  "main": "index.js",
+  "name": "@asfor-fun/ui",
+  "version": "1.0.5",
+  "main": "dist/components.cjs.js",
+  "module": "dist/components.esm.js",
+  "jsnext:main": "dist/components.esm.js",
+  "browser": "dist/components.umd.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -16,19 +16,19 @@ export default {
   external: ["vue"],
   output: [
     {
-      dir: "dist",
+      dir: "./packages/components/dist",
       format: "cjs",
       entryFileNames: "[name].cjs.js",
       sourcemap: false, // 是否输出sourcemap
     },
     {
-      dir: "dist",
+      dir: "./packages/components/dist",
       format: "esm",
       entryFileNames: "[name].esm.js",
       sourcemap: false, // 是否输出sourcemap
     },
     {
-      dir: "dist",
+      dir: "./packages/components/dist",
       format: "umd",
       entryFileNames: "[name].umd.js",
       name: "ASFOR_utils", // umd模块名称，相当于一个命名空间，会自动挂载到window下面
