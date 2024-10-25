@@ -18,7 +18,8 @@
       "dom.iterable",
       "scripthost"
     ],
-    "outDir": "./",
+    "rootDir": "./packages/components",
+    "outDir": "./packages/components/dist",
     "resolveJsonModule": true
   },
   "include": [

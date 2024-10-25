@@ -19,7 +19,7 @@
 <script lang="ts">
 import { defineComponent, ref, onMounted, nextTick } from "vue";
 
-import useFormItem from "components/form/hooks/useFormItem";
+import { useFormItem } from "../../../packages/components/dist/hooks.esm.js";
 
 export default defineComponent({
   setup() {

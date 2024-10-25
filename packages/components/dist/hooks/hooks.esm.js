@@ -1,5 +1,4 @@
-
-export const createCommonReq = async ({
+const createCommonReq = async ({
   url,
   method,
   params = {},
@@ -8,29 +7,13 @@ export const createCommonReq = async ({
   valueKey = "value",
   callback,
 }) => {
-  if (url) {
-    try {
-      // TODO
-      // const res = await http[method](url, params, {
-      //   ...config,
-      // });
-      // const { data } = getResRealData(res);
-      // const list = data.map((item) => {
-      //   return {
-      //     label: item[labelKey],
-      //     value: item[valueKey],
-      //   };
-      // });
-      // callback && callback(list);
-    } catch (error) {}
-  }
 };
 
-export const idGenerator = () => {
+const idGenerator = () => {
   return `_${Math.floor(Math.random() * 1000000 + Math.random() * 50000 + Math.random() * 6000)}`;
 };
 
-export default function useFormItem({
+function useFormItem({
   colAttrs = {
     span: 8,
     offset: 0,
@@ -326,3 +309,5 @@ export default function useFormItem({
     createBtn,
   };
 }
+
+export { useFormItem };

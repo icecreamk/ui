@@ -7,11 +7,12 @@ import commonjs from "@rollup/plugin-commonjs";
 import json from '@rollup/plugin-json'
 // import replace from '@rollup/plugin-replace'
 import babel from "@rollup/plugin-babel";
-// import ts from 'rollup-plugin-typescript2'
 import { terser } from "rollup-plugin-terser";
 import css from "rollup-plugin-css-only";
+import nodePolyfills from 'rollup-plugin-polyfill-node';
+import ts from '@rollup/plugin-typescript'
 
-export default {
+export default [{
   input: "./packages/components/index.js",
   external: ["vue"],
   output: [
@@ -40,6 +41,7 @@ export default {
     vuePlugin({
       css: true,
     }),
+    ts({ module: "ESNext" }),
     css({ output: "style.css" }),
     babel({
       exclude: "node_modules/**",
@@ -51,5 +53,43 @@ export default {
     }),
     commonjs(),
     json(),
+    nodePolyfills(),
   ],
-};
+}, {
+  input: "./packages/components/hooks.js",
+  output: [
+    {
+      dir: "./packages/components/dist/hooks",
+      format: "cjs",
+      entryFileNames: "[name].cjs.js",
+      sourcemap: false, // 是否输出sourcemap
+    },
+    {
+      dir: "./packages/components/dist/hooks",
+      format: "esm",
+      entryFileNames: "[name].esm.js",
+      sourcemap: false, // 是否输出sourcemap
+    },
+    {
+      dir: "./packages/components/dist/hooks",
+      format: "umd",
+      entryFileNames: "[name].umd.js",
+      name: "ASFOR_utils", // umd模块名称，相当于一个命名空间，会自动挂载到window下面
+      sourcemap: false,
+      plugins: [terser()],
+    },
+  ],
+  plugins: [
+    babel({
+      exclude: "node_modules/**",
+      extensions: [".js", ".jsx", ".vue"],
+      babelHelpers: "bundled",
+    }),
+    resolve({
+      extensions: [".vue", ".jsx", ".js"],
+    }),
+    commonjs(),
+    json(),
+    nodePolyfills(),
+  ],
+}];

@@ -27,7 +27,7 @@
 </template>
 <script setup>
 import { ref, defineComponent } from 'vue'
-import http from "axios";
+// import http from "axios";
 import TableColumn from './tableColumn.vue';
 import { getResRealData, resetPageNoFormDelete } from "./utils";
 
@@ -119,17 +119,17 @@ const refreshTable = async ({ extraParams = {}, resetPage = false } = {}) => {
 
 
     try {
-      const res = await http({
-        method: props.api.method || "get",
-        url: props.api.url || '/',
-        params,
-        ...props.api.config || {}
-      })
+      // const res = await http({
+      //   method: props.api.method || "get",
+      //   url: props.api.url || '/',
+      //   params,
+      //   ...props.api.config || {}
+      // })
       
-      const { data, total = 0 } = getResRealData(res);
-      pageInfo.value.totalNum = Number(total);
-      tableList.value = data;
-      props.updateTableId && (tableUid.value = Math.random());
+      // const { data, total = 0 } = getResRealData(res);
+      // pageInfo.value.totalNum = Number(total);
+      // tableList.value = data;
+      // props.updateTableId && (tableUid.value = Math.random());
       loading.value = false;
     } catch (error) {
       loading.value = false;
