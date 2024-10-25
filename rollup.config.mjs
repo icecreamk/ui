@@ -12,7 +12,7 @@ import { terser } from "rollup-plugin-terser";
 import css from "rollup-plugin-css-only";
 
 export default {
-  input: "./packages/components/components.js",
+  input: "./packages/components/index.js",
   external: ["vue"],
   output: [
     {

@@ -24550,6 +24550,19 @@ script.install = app => {
 };
 const AsForm = script;
 
-exports.AsButton = AsButton;
-exports.AsForm = AsForm;
-exports.AsTable = AsTable;
+var components = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  AsButton: AsButton,
+  AsForm: AsForm,
+  AsTable: AsTable
+});
+
+var index = {
+  install(app) {
+    Object.entries(components).forEach(([key, value]) => {
+      app.component(key, value);
+    });
+  }
+};
+
+module.exports = index;
