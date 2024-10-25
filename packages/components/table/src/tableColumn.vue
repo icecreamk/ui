@@ -4,7 +4,6 @@
       show-overflow-tooltip
       :key="col.uid || col.prop"
       v-bind="getColAttrs(col)"
-      v-slots="col.slots"
     >
   </el-table-column>
 </template>
