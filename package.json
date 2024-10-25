@@ -1,8 +1,11 @@
 {
   "name": "@asfor-fun/ui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
-  "main": "index.js",
+  "main": "dist/components.cjs.js",
+  "module": "dist/components.esm.js",
+  "jsnext:main": "dist/components.esm.js",
+  "browser": "dist/components.umd.js",
   "scripts": {
     "build": "rollup -c",
     "mock": "pnpm run --filter ./packages/egg-service dev",
@@ -13,7 +16,7 @@
     "docs:preview": "vitepress preview docs",
     "changeset": "changeset",
     "update-changelog": "changeset version",
-    "release": "changeset publish --registry=https://registry.npmjs.com/ --access=public"
+    "release": "npm publish"
   },
   "keywords": [],
   "author": "",
