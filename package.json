@@ -12,7 +12,7 @@
     "docs:preview": "vitepress preview docs",
     "changeset": "changeset",
     "update-changelog": "changeset version",
-    "release": "npm publish"
+    "release": "pnpm --filter @asfor-fun/ui publish"
   },
   "keywords": [],
   "author": "",
