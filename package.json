@@ -1,11 +1,12 @@
 {
   "name": "@asfor-fun/ui",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "",
   "main": "dist/components.cjs.js",
   "module": "dist/components.esm.js",
   "jsnext:main": "dist/components.esm.js",
   "browser": "dist/components.umd.js",
+  "files": ["dist"],
   "scripts": {
     "build": "rollup -c",
     "mock": "pnpm run --filter ./packages/egg-service dev",
