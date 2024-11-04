@@ -1,5 +1,6 @@
 // import pkg from './package.json'
 import vuePlugin from "rollup-plugin-vue";
+import clear from 'rollup-plugin-clear'
 // import scss from 'rollup-plugin-scss'
 // import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import resolve from "@rollup/plugin-node-resolve";
@@ -80,6 +81,10 @@ export default [{
     },
   ],
   plugins: [
+    clear({
+      targets: ["./packages/components/dist"],
+    }),
+    ts({ module: "ESNext" }),
     babel({
       exclude: "node_modules/**",
       extensions: [".js", ".jsx", ".vue"],

@@ -16,7 +16,7 @@ var script$5 = /*#__PURE__*/Object.assign({
   }
 });
 
-script$5.__file = "packages/components/button/src/button.vue";
+script$5.__file = "packages/components/src/button/button.vue";
 
 script$5.install = app => {
   app.component(script$5.name, script$5);
@@ -4979,7 +4979,7 @@ var script$4 = /*#__PURE__*/Object.assign({
   }
 });
 
-script$4.__file = "packages/components/table/src/tableColumn.vue";
+script$4.__file = "packages/components/src/table/tableColumn.vue";
 
 const resetPageNoFormDelete = pageInfo => {
   const {
@@ -5159,7 +5159,7 @@ var script$3 = /*#__PURE__*/Object.assign({
   }
 });
 
-script$3.__file = "packages/components/table/src/table.vue";
+script$3.__file = "packages/components/src/table/table.vue";
 
 script$3.install = app => {
   app.component(script$3.name, script$3);
@@ -5318,7 +5318,7 @@ var script$2 = {
   }
 };
 
-script$2.__file = "packages/components/form/src/CustomInputNumberRange.vue";
+script$2.__file = "packages/components/src/form/CustomInputNumberRange.vue";
 
 var script$1 = /*#__PURE__*/Object.assign({
   name: "FormItem",
@@ -5502,7 +5502,7 @@ var script$1 = /*#__PURE__*/Object.assign({
   }
 });
 
-script$1.__file = "packages/components/form/src/FormItem.vue";
+script$1.__file = "packages/components/src/form/FormItem.vue";
 
 const _hoisted_1 = {
   class: "as-form"
@@ -5617,7 +5617,7 @@ var script = /*#__PURE__*/Object.assign({
   }
 });
 
-script.__file = "packages/components/form/src/form.vue";
+script.__file = "packages/components/src/form/form.vue";
 
 script.install = app => {
   app.component(script.name, script);

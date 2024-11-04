@@ -1,3 +1,3 @@
-export { AsButton } from "./button";
-export { AsTable } from "./table";
-export { AsForm } from "./form";
+export { AsButton } from "./src/button";
+export { AsTable } from "./src/table";
+export { AsForm } from "./src/form";
