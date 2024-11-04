@@ -18,7 +18,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, onMounted, nextTick } from "vue";
-import { useFormItem } from "../../../packages/components/hooks.js";
+import { useFormItem } from "@asfor-fun/ui/hooks.js";
 
 export default defineComponent({
   setup() {
