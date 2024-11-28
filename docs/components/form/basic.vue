@@ -3,8 +3,9 @@
     :itemList="itemList"
     :form="filterInfo"
     class="filters"
-    label-position="right"
-    label-width="150px"
+    :formAttrs="{
+      labelWidth: 120
+    }"
     style="margin-bottom: 10px"
   >
     <template #btns>
@@ -30,39 +31,48 @@ export default defineComponent({
       createDatePicker,
     } = useFormItem({
       colAttrs: {
-        span: 12,
-        offset: 0,
+        span: 24,
+        style: "padding-right: 50%",
       },
-    });
+    } );
 
     const filterInfo = ref({
-      provinceCode: "", // 省份
+      name: "",
+      age: "",
+      born: ""
     });
     const itemList = ref([
       {
         rowAttrs: {
           gutter: 12,
         },
-        provinceCode: createSelect("provinceCode", "服务是否调用成功", {
-          customCollAttrs: { style: "padding-right: 10px" },
+        name: createInput("name", "姓名"),
+        age: createSelect("age", "年龄", {
           attrs: {
             filterable: true,
             children: [
               {
-                label: "全部",
-                value: "all",
+                label: "18-25",
+                value: "1",
+              },
+              {
+                label: "25-30",
+                value: "2",
               },
             ],
           },
         }),
+        born: createDatePicker("born", "出生日期"),
         btns: createSlot("btns", {
           span: 12,
-          style: "justify-content: flex-end;display: flex;",
-        }),
+          style: "justify-content: center;display: flex;",
+        } ),
       },
     ]);
 
-    const handleSearch = (flag = false) => {};
+    const handleSearch = (flag = false) => {
+      console.log(filterInfo.value);
+    };
 
     return {
       itemList,

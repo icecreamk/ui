@@ -5,7 +5,7 @@ var vue = require('vue');
 const _hoisted_1$3 = {
   class: "as-button"
 };
-var script$5 = /*#__PURE__*/Object.assign({
+var script$6 = /*#__PURE__*/Object.assign({
   name: "as-button"
 }, {
   __name: 'button',
@@ -16,12 +16,12 @@ var script$5 = /*#__PURE__*/Object.assign({
   }
 });
 
-script$5.__file = "packages/components/src/button/button.vue";
+script$6.__file = "packages/components/src/button/button.vue";
 
-script$5.install = app => {
-  app.component(script$5.name, script$5);
+script$6.install = app => {
+  app.component(script$6.name, script$6);
 };
-const AsButton = script$5;
+const AsButton = script$6;
 
 var global$1 = (typeof global !== "undefined" ? global :
   typeof self !== "undefined" ? self :
@@ -4952,7 +4952,7 @@ var startCase = createCompounder(function(result, word, index) {
   return result + (index ? ' ' : '') + upperFirst(word);
 });
 
-var script$4 = /*#__PURE__*/Object.assign({
+var script$5 = /*#__PURE__*/Object.assign({
   name: "BaseTableColumn"
 }, {
   __name: 'tableColumn',
@@ -4979,7 +4979,7 @@ var script$4 = /*#__PURE__*/Object.assign({
   }
 });
 
-script$4.__file = "packages/components/src/table/tableColumn.vue";
+script$5.__file = "packages/components/src/table/tableColumn.vue";
 
 const resetPageNoFormDelete = pageInfo => {
   const {
@@ -4996,7 +4996,7 @@ const resetPageNoFormDelete = pageInfo => {
 const _hoisted_1$2 = {
   class: "as-table"
 };
-var script$3 = /*#__PURE__*/Object.assign({
+var script$4 = /*#__PURE__*/Object.assign({
   name: "BaseTable"
 }, {
   __name: 'table',
@@ -5036,7 +5036,7 @@ var script$3 = /*#__PURE__*/Object.assign({
     emit: __emit
   }) {
     vue.defineComponent({
-      TableColumn: script$4
+      TableColumn: script$5
     });
     const props = __props;
     const emits = __emit;
@@ -5136,7 +5136,7 @@ var script$3 = /*#__PURE__*/Object.assign({
         key: tableUid.value,
         onSelectionChange: handleSelectionChange
       }), {
-        default: vue.withCtx(() => [vue.renderSlot(_ctx.$slots, "expand"), vue.createVNode(script$4, {
+        default: vue.withCtx(() => [vue.renderSlot(_ctx.$slots, "expand"), vue.createVNode(script$5, {
           columns: __props.columns
         }, null, 8 /* PROPS */, ["columns"]), vue.renderSlot(_ctx.$slots, "operation")]),
         _: 3 /* FORWARDED */
@@ -5159,12 +5159,12 @@ var script$3 = /*#__PURE__*/Object.assign({
   }
 });
 
-script$3.__file = "packages/components/src/table/table.vue";
+script$4.__file = "packages/components/src/table/table.vue";
 
-script$3.install = app => {
-  app.component(script$3.name, script$3);
+script$4.install = app => {
+  app.component(script$4.name, script$4);
 };
-const AsTable = script$3;
+const AsTable = script$4;
 
 function createNewItemForm(formItemRef, form, newFormItem, formItem, slots, keys) {
   for (let key of keys) {
@@ -5263,7 +5263,7 @@ const getColAttrs = value => {
 const _hoisted_1$1 = {
   class: "inputNumbox"
 };
-var script$2 = {
+var script$3 = {
   __name: 'CustomInputNumberRange',
   props: {
     myForm: {
@@ -5318,13 +5318,13 @@ var script$2 = {
   }
 };
 
-script$2.__file = "packages/components/src/form/CustomInputNumberRange.vue";
+script$3.__file = "packages/components/src/form/CustomInputNumberRange.vue";
 
-var script$1 = /*#__PURE__*/Object.assign({
+var script$2 = /*#__PURE__*/Object.assign({
   name: "FormItem",
   components: {
     // ColumSlot,
-    CustomInputNumberRange: script$2
+    CustomInputNumberRange: script$3
   }
 }, {
   __name: 'FormItem',
@@ -5502,12 +5502,12 @@ var script$1 = /*#__PURE__*/Object.assign({
   }
 });
 
-script$1.__file = "packages/components/src/form/FormItem.vue";
+script$2.__file = "packages/components/src/form/FormItem.vue";
 
 const _hoisted_1 = {
   class: "as-form"
 };
-var script = /*#__PURE__*/Object.assign({
+var script$1 = /*#__PURE__*/Object.assign({
   name: "as-form"
 }, {
   __name: 'form',
@@ -5599,7 +5599,7 @@ var script = /*#__PURE__*/Object.assign({
               }, vue.unref(getColAttrs)(info)), {
                 default: vue.withCtx(() => [info.slot ? vue.renderSlot(_ctx.$slots, info.slot, {
                   key: 0
-                }) : (vue.openBlock(), vue.createBlock(script$1, {
+                }) : (vue.openBlock(), vue.createBlock(script$2, {
                   key: 1,
                   info: info,
                   myForm: myProp.form,
@@ -5617,22 +5617,374 @@ var script = /*#__PURE__*/Object.assign({
   }
 });
 
-script.__file = "packages/components/src/form/form.vue";
+script$1.__file = "packages/components/src/form/form.vue";
 
+script$1.install = app => {
+  app.component(script$1.name, script$1);
+};
+const AsForm = script$1;
+
+const createCommonReq = async ({ url, method, params = {}, config = {}, labelKey = "label", valueKey = "value", callback, }) => {
+};
+const idGenerator = () => {
+    return `_${Math.floor(Math.random() * 1000000 + Math.random() * 50000 + Math.random() * 6000)}`;
+};
+function useFormItem({ colAttrs = {
+    span: 8,
+    offset: 0,
+}, } = {}) {
+    const createInput = (prop, label, { attrs = {}, events = {}, customCollAttrs = {}, hideLabel = false, slots = {}, } = {}) => {
+        return {
+            hideLabel,
+            colAttrs: {
+                ...colAttrs,
+                ...customCollAttrs,
+            },
+            label,
+            inner: {
+                is: "el-input",
+                clearable: true,
+                placeholder: `请输入${label}`,
+                ...attrs,
+            },
+            events,
+            prop,
+            slots,
+        };
+    };
+    const createInputNumberRange = (prop, label, { attrs = {}, events = {}, customCollAttrs = {}, hideLabel = false } = {}) => {
+        return {
+            hideLabel,
+            colAttrs: {
+                ...colAttrs,
+                ...customCollAttrs,
+            },
+            label,
+            inner: {
+                is: "CustomInputNumberRange",
+                ...attrs,
+            },
+            events,
+            prop,
+        };
+    };
+    const createInputNumber = (prop, label, { attrs = {}, events = {}, customCollAttrs = {}, hideLabel = false } = {}) => {
+        return {
+            hideLabel,
+            colAttrs: {
+                ...colAttrs,
+                ...customCollAttrs,
+            },
+            label,
+            inner: {
+                is: "el-input-number",
+                ...attrs,
+            },
+            events,
+            prop,
+        };
+    };
+    const createRadio = (prop, label, { attrs = {}, events = {}, api = {}, customCollAttrs = {}, hideLabel = false, } = {}) => {
+        const info = {
+            hideLabel,
+            colAttrs: {
+                ...colAttrs,
+                ...customCollAttrs,
+            },
+            label,
+            inner: {
+                is: "el-radio-group",
+                childIs: "el-radio",
+                children: [
+                // {
+                //   label: "选项1",
+                //   value: "1",
+                // },
+                ],
+                ...attrs,
+            },
+            events,
+            prop,
+        };
+        createCommonReq(api);
+        return info;
+    };
+    const createSelect = (prop, label, { attrs = {}, events = {}, api = {}, customCollAttrs = {}, hideLabel = false, } = {}) => {
+        const info = {
+            hideLabel,
+            colAttrs: {
+                ...colAttrs,
+                ...customCollAttrs,
+            },
+            label,
+            inner: {
+                is: "el-select",
+                childIs: "el-option",
+                clearable: true,
+                filterable: true,
+                placeholder: `请选择${label}`,
+                children: [
+                // {
+                //   label: "选项1",
+                //   value: "1",
+                // },
+                // {
+                //   label: "选项2",
+                //   value: "2",
+                // },
+                ],
+                ...attrs,
+            },
+            events,
+            prop,
+        };
+        createCommonReq(api);
+        return info;
+    };
+    const createSwitch = (prop, label, { attrs = {}, events = {}, customCollAttrs = {}, hideLabel = false } = {}) => {
+        return {
+            hideLabel,
+            colAttrs: {
+                ...colAttrs,
+                ...customCollAttrs,
+            },
+            label,
+            inner: {
+                is: "el-switch",
+                ...attrs,
+            },
+            events,
+            prop,
+        };
+    };
+    const createBtn = ({ customCollAttrs = {}, slots = {}, attrs = {}, events = {}, } = {}) => {
+        return {
+            colAttrs: {
+                ...colAttrs,
+                ...customCollAttrs,
+            },
+            slots: {
+                default: () => {
+                    return "提交";
+                },
+                ...slots,
+            },
+            inner: {
+                is: "el-button",
+                ...attrs,
+            },
+            events,
+        };
+    };
+    const createItemList = (list = [], { customCollAttrs = {}, hideLabel = true, uid = idGenerator() } = {}) => {
+        return {
+            uid,
+            colAttrs: {
+                ...colAttrs,
+                ...customCollAttrs,
+            },
+            hideLabel,
+            list,
+        };
+    };
+    const createSlot = (name, colAttrs = {
+        span: 8,
+        labelWidth: "0px",
+    }, hideLabel = true) => {
+        return {
+            slot: name,
+            colAttrs,
+            hideLabel,
+        };
+    };
+    const createDatePicker = (prop, label, { attrs = {}, events = {}, customCollAttrs = {} } = {}) => {
+        return {
+            colAttrs: {
+                ...colAttrs,
+                ...customCollAttrs,
+            },
+            label,
+            inner: {
+                is: "el-date-picker",
+                type: "date",
+                clearable: true,
+                startPlaceholder: "开始时间",
+                endPlaceholder: "结束时间",
+                rangeSeparator: "至",
+                valueFormat: "YYYY-MM-DD HH:mm:ss",
+                style: "width: 100%",
+                ...attrs,
+            },
+            events,
+            prop,
+        };
+    };
+    const createTimePicker = (prop, label, { attrs = {}, events = {}, customCollAttrs = {}, hideLabel = false } = {}) => {
+        return {
+            colAttrs: {
+                ...colAttrs,
+                ...customCollAttrs,
+            },
+            hideLabel,
+            label,
+            inner: {
+                is: "el-time-picker",
+                type: "time",
+                clearable: true,
+                isRange: true,
+                startPlaceholder: "开始时间",
+                endPlaceholder: "结束时间",
+                rangeSeparator: "至",
+                valueFormat: "HH:mm:ss",
+                ...attrs,
+            },
+            events,
+            prop,
+        };
+    };
+    return {
+        createInput,
+        createInputNumber,
+        createInputNumberRange,
+        createSelect,
+        createRadio,
+        createDatePicker,
+        createTimePicker,
+        createSwitch,
+        createSlot,
+        createItemList,
+        createBtn,
+    };
+}
+
+var script = vue.defineComponent({
+  name: 'as-form-table',
+  setup() {
+    const {
+      createInput,
+      createSelect,
+      createSlot,
+      createInputNumberRange,
+      createDatePicker
+    } = useFormItem({
+      colAttrs: {
+        span: 8
+      }
+    });
+    const filterInfo = vue.ref({
+      name: "",
+      age: "",
+      born: ""
+    });
+    const itemList = vue.ref([{
+      rowAttrs: {
+        gutter: 12
+      },
+      name: createInput("name", "姓名"),
+      age: createSelect("age", "年龄", {
+        attrs: {
+          filterable: true,
+          children: [{
+            label: "18-25",
+            value: "1"
+          }, {
+            label: "25-30",
+            value: "2"
+          }]
+        }
+      }),
+      born: createDatePicker("born", "出生日期"),
+      btns: createSlot("btns", {
+        span: 24,
+        style: "justify-content: flex-end;display: flex;"
+      })
+    }]);
+    const handleSearch = (flag = false) => {
+      console.log(filterInfo.value);
+    };
+    const columns = [{
+      prop: "time",
+      label: "时间"
+    }, {
+      prop: "province",
+      label: "省份"
+    }];
+    const api = {
+      url: "table",
+      method: "get",
+      config: {
+        baseURL: "http://localhost:7002/",
+        withCredentials: false
+      }
+    };
+    return {
+      itemList,
+      columns,
+      api,
+      filterInfo,
+      handleSearch
+    };
+  }
+});
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_el_button = vue.resolveComponent("el-button");
+  const _component_as_form = vue.resolveComponent("as-form");
+  const _component_as_table = vue.resolveComponent("as-table");
+  return vue.openBlock(), vue.createElementBlock(vue.Fragment, null, [vue.createVNode(_component_as_form, {
+    itemList: _ctx.itemList,
+    form: _ctx.filterInfo,
+    class: "filters",
+    formAttrs: {
+      labelWidth: 80
+    },
+    style: {
+      "margin-bottom": "10px"
+    }
+  }, {
+    btns: vue.withCtx(() => [vue.createVNode(_component_el_button, {
+      type: "primary",
+      onClick: _cache[0] || (_cache[0] = $event => _ctx.handleSearch()),
+      style: {
+        "width": "80px"
+      }
+    }, {
+      default: vue.withCtx(() => _cache[2] || (_cache[2] = [vue.createTextVNode("查询")])),
+      _: 1 /* STABLE */
+    }), vue.createVNode(_component_el_button, {
+      onClick: _cache[1] || (_cache[1] = $event => _ctx.handleSearch(true))
+    }, {
+      default: vue.withCtx(() => _cache[3] || (_cache[3] = [vue.createTextVNode("重置")])),
+      _: 1 /* STABLE */
+    })]),
+    _: 1 /* STABLE */
+  }, 8 /* PROPS */, ["itemList", "form"]), vue.createVNode(_component_as_table, {
+    columns: _ctx.columns,
+    ref: "baseTableRef",
+    api: _ctx.api
+  }, null, 8 /* PROPS */, ["columns", "api"])], 64 /* STABLE_FRAGMENT */);
+}
+
+script.render = render;
+script.__file = "packages/components/src/formAndTable/formAndTable.vue";
+
+console.log(script.name);
 script.install = app => {
   app.component(script.name, script);
 };
-const AsForm = script;
+const AsFormTable = script;
 
 var components = /*#__PURE__*/Object.freeze({
   __proto__: null,
   AsButton: AsButton,
   AsForm: AsForm,
+  AsFormTable: AsFormTable,
   AsTable: AsTable
 });
 
 var index = {
   install(app) {
+    console.log(components);
     Object.entries(components).forEach(([key, value]) => {
       app.component(key, value);
     });

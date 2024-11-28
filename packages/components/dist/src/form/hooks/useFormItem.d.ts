@@ -135,6 +135,7 @@ export default function useFormItem({ colAttrs, }?: {
             endPlaceholder: string;
             rangeSeparator: string;
             valueFormat: string;
+            style: string;
         };
         events: {};
         prop: any;

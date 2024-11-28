@@ -1,5 +1,6 @@
 <template>
-  <as-form-table
+  <as-form
+    ref="formRef"
     :itemList="itemList"
     :form="filterInfo"
     class="filters"
@@ -14,12 +15,13 @@
       >
       <el-button @click="handleSearch(true)">重置</el-button>
     </template>
-  </as-form-table>
+  </as-form>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref, onMounted, nextTick } from "vue";
 import { useFormItem } from "@asfor-fun/ui/hooks.js";
+import { ElMessage } from "element-plus";
 
 export default defineComponent({
   setup() {
@@ -39,13 +41,22 @@ export default defineComponent({
     const filterInfo = ref({
       name: "",
       age: "",
+      born: ""
     });
     const itemList = ref([
       {
         rowAttrs: {
           gutter: 12,
         },
-        name: createInput("name", "姓名"),
+        name: createInput("name", "姓名", {
+          attrs: {
+            rules: [{
+              required: true,
+              message: '请输入姓名',
+              trigger: 'blur'
+            }]
+          }
+        }),
         age: createSelect("age", "年龄", {
           attrs: {
             filterable: true,
@@ -69,11 +80,29 @@ export default defineComponent({
       },
     ]);
 
-    const handleSearch = (flag = false) => {};
+    const handleSearch = (flag = false) => {
+      const { curFormRef } = getBaseFormRef();
+      if (!curFormRef) return;
+      curFormRef.validate((valid, fields) => {
+        if (!valid) {
+          ElMessage.error("表单校验失败");
+          return;
+        }
+      });
+    };
+
+    const formRef: any = ref(null)
+    const getBaseFormRef = () => {
+      return {
+        curFormRef:
+          formRef.value && formRef.value ? formRef.value.baseFormRef : null,
+      };
+    };
 
     return {
       itemList,
       filterInfo,
+      formRef,
       handleSearch,
     };
   },

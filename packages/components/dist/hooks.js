@@ -186,6 +186,7 @@ function useFormItem({ colAttrs = {
                 endPlaceholder: "结束时间",
                 rangeSeparator: "至",
                 valueFormat: "YYYY-MM-DD HH:mm:ss",
+                style: "width: 100%",
                 ...attrs,
             },
             events,
