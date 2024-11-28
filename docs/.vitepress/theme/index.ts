@@ -1,7 +1,8 @@
 import { h } from 'vue'
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
-import AsforUI from "components";
+import AsforUI from "../../../packages/components";
+import '../../../packages/components/dist/style.css'
 import ElementPlus from 'element-plus'
 
 import {

@@ -1,8 +1,5 @@
 import { defineConfig } from "vitepress";
-import {
-  containerPreview,
-  componentPreview,
-} from "@vitepress-demo-preview/plugin";
+import { mdPlugin } from "./theme/plugins";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -14,6 +11,7 @@ export default defineConfig({
       { text: "首页", link: "/" },
       { text: "组件", link: "/components/button" },
     ],
+    aside: false,
 
     // sidebar: [
     //   {
@@ -30,8 +28,9 @@ export default defineConfig({
           text: "基本",
           items: [
             { text: "Button 按钮", link: "/components/button/" },
-            { text: "Table 表格", link: "/components/table/" },
             { text: "Form 表单", link: "/components/form/" },
+            { text: "Table 表格", link: "/components/table/" },
+            { text: "FormTable 表格查询", link: "/components/formAndTable/" },
           ],
         },
       ],
@@ -42,11 +41,6 @@ export default defineConfig({
     ],
   },
   markdown: {
-    // @vitepress-demo-preview的配置
-    config(md) {
-      // 支持区块内的方式展示 demo 和示例代码
-      md.use(containerPreview);
-      md.use(componentPreview);
-    },
+    config: (md) => mdPlugin(md),
   },
 });

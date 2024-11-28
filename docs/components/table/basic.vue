@@ -2,17 +2,7 @@
   <as-table
     :columns="columns"
     ref="baseTableRef"
-    :tableAttrs="tableAttrs"
-    :getTableParams="getTableParams"
-    :api="{
-      url: 'table',
-      method: 'get',
-      config: {
-        baseURL: 'http://localhost:7002/',
-        withCredentials: false,
-      },
-    }"
-    @onSelectionChange="handleSelectionChange"
+    :api="api"
   />
 </template>
 
@@ -23,10 +13,17 @@ export default defineComponent({
   setup() {
 
     onMounted(() => {
-      nextTick(() => {
-        triggerRefresh();
-      });
+      triggerRefresh();
     });
+
+    const api = {
+      url: "table",
+      method: "get",
+      config: {
+        baseURL: "http://localhost:7002/",
+        withCredentials: false,
+      },
+    };
 
     const baseTableRef: any = ref(null);
 
@@ -41,13 +38,6 @@ export default defineComponent({
       },
     ];
 
-    const tableAttrs = {
-      rowKey: (val) => val.tacticId,
-    };
-    const getTableParams = () => {
-      return {}
-    };
-
     const triggerRefresh = async ({
       extraParams = {},
       resetPage = false,
@@ -56,14 +46,11 @@ export default defineComponent({
       refreshTable && refreshTable({ extraParams, resetPage });
     };
 
-    const handleSelectionChange = () => {}
 
     return {
       columns,
-      tableAttrs,
+      api,
       baseTableRef,
-      getTableParams,
-      handleSelectionChange,
     };
   },
 });
